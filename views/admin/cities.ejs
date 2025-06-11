@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Список городов</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Список городов</h1>
+    <% if (cities.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>DDX</th>
+            <th>МЮЗ</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cities.forEach(city => { %>
+            <tr>
+              <td><a href="/city/<%= city.id %>"><%= city.name %></a></td>
+              <td><%= city.ddx ? 'Да' : 'Нет' %></td>
+              <td><%= city.myuz ? 'Да' : 'Нет' %></td>
+              <td>
+                <form action="/admin/cities/<%= city.id %>/delete" method="POST" onsubmit="return confirm('Удалить город <%= city.name %>?');">
+                  <button type="submit">Удалить</button>
+                </form>
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>Нет добавленных городов.</p>
+    <% } %>
+    <div class="links">
+      <a href="/admin">Назад</a>
+    </div>
+    <button id="theme-toggle">Переключить тему</button>
+  </div>
+  <script src="/js/theme.js"></script>
+</body>
+</html> 

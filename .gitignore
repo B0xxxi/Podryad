@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# SQLite database
+/data/database.sqlite
+
+# Uploads directory
+/public/uploads/
+
+# Environment variables
+.env 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ручное добавление</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ручное добавление</h1>
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+    <% if (success) { %>
+      <p class="success"><%= success %></p>
+    <% } %>
+    <form action="/admin/add" method="POST" class="form-box">
+      <label>Город:
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        <input type="checkbox" name="ddx" /> DDX
+      </label>
+      <label>
+        <input type="checkbox" name="myuz" /> МЮЗ
+      </label>
+      <label>Монтажники (через запятую):
+        <input type="text" name="installers" />
+      </label>
+      <label>Сисадмины (через запятую):
+        <input type="text" name="sysadmins" />
+      </label>
+      <button type="submit">Добавить</button>
+    </form>
+    <div class="links">
+      <a href="/admin">Назад</a>
+    </div>
+    <button id="theme-toggle">Переключить тему</button>
+  </div>
+  <script src="/js/theme.js"></script>
+</body>
+</html> 

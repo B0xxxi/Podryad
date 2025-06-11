@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Логи</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Логи</h1>
+    <ul class="logs-list">
+      <% logs.forEach(log => { %>
+        <li>[<%= log.createdAt.toLocaleString() %>] <strong><%= log.action %></strong>: <%= log.details %></li>
+      <% }) %>
+    </ul>
+    <div class="links">
+      <a href="/admin">Назад</a>
+    </div>
+    <button id="theme-toggle">Переключить тему</button>
+  </div>
+  <script src="/js/theme.js"></script>
+</body>
+</html> 
