@@ -5,30 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Поиск по городу</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="/css/custom-buttons.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Поиск по городу</h1>
-    <form action="/search" method="GET" class="form-box">
-      <input type="text" name="q" placeholder="Введите город" value="<%= q || '' %>" required />
-      <button type="submit">Найти</button>
+  <div class="main-container">
+    <h1 class="search-container__title">Поиск по городу</h1>
+    <form action="/search" method="GET" class="search-form">
+      <input type="text" name="q" placeholder="Введите город" class="search-form__input" value="<%= q || '' %>" required />
+      <button type="submit" class="button button--primary button--light">Найти</button>
     </form>
     <% if (q) { %>
       <ul class="results">
         <% if (cities.length) { %>
           <% cities.forEach(city => { %>
-            <li><a href="/city/<%= city.id %>"><%= city.name %></a></li>
+            <li class="results__item"><a href="/city/<%= city.id %>" class="results__link"><%= city.name %></a></li>
           <% }) %>
         <% } else { %>
-          <li>Ничего не найдено.</li>
+          <li class="results__item">Ничего не найдено.</li>
         <% } %>
       </ul>
     <% } %>
     <div class="links">
-      <a href="/logout">Выход</a>
-      <a href="/admin">Админ-панель</a>
+      <a href="/logout" class="button button--secondary">Выход</a>
+      <a href="/admin" class="button button--secondary">Админ-панель</a>
     </div>
-    <button id="theme-toggle">Переключить тему</button>
+    <button id="theme-toggle" class="button button--secondary">Переключить тему</button>
   </div>
   <script src="/js/theme.js"></script>
 </body>

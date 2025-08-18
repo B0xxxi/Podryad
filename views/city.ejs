@@ -5,38 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= city.name %></title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/city.css">
+  <link rel="stylesheet" href="/css/custom-buttons.css">
 </head>
 <body>
-  <div class="container">
-    <h1><%= city.name %></h1>
-    <p><strong>DDX:</strong> <%= city.ddx ? 'Да' : 'Нет' %></p>
-    <p><strong>МЮЗ:</strong> <%= city.myuz ? 'Да' : 'Нет' %></p>
-    <h2>Монтажники:</h2>
-    <% if (city.Installers.length) { %>
-      <ul>
-        <% city.Installers.forEach(inst => { %>
-          <li><%= inst.name %></li>
-        <% }) %>
-      </ul>
-    <% } else { %>
-      <p>Нет данных.</p>
-    <% } %>
-    <h2>Сисадмины:</h2>
-    <% if (city.Sysadmins.length) { %>
-      <ul>
-        <% city.Sysadmins.forEach(sa => { %>
-          <li><%= sa.name %></li>
-        <% }) %>
-      </ul>
-    <% } else { %>
-      <p>Нет данных.</p>
-    <% } %>
-    <div class="links">
-      <a href="/search">Назад к поиску</a>
-      <a href="/logout">Выход</a>
-      <a href="/admin">Админ-панель</a>
+  <div class="main-container">
+    <h1 class="city-container__title"><%= city.name %></h1>
+    <div class="city-details">
+      <p><strong>DDX:</strong> <%= city.ddx ? 'Да' : 'Нет' %></p>
+      <p><strong>МЮЗ:</strong> <%= city.myuz ? 'Да' : 'Нет' %></p>
+      <h2 class="city-details__section-title">Монтажники:</h2>
+      <% if (city.Installers.length) { %>
+        <ul class="city-details__list">
+          <% city.Installers.forEach(inst => { %>
+            <li class="city-details__list-item"><%= inst.name %></li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>Нет данных.</p>
+      <% } %>
+      <h2 class="city-details__section-title">Сисадмины:</h2>
+      <% if (city.Sysadmins.length) { %>
+        <ul class="city-details__list">
+          <% city.Sysadmins.forEach(sa => { %>
+            <li class="city-details__list-item"><%= sa.name %></li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>Нет данных.</p>
+      <% } %>
     </div>
-    <button id="theme-toggle">Переключить тему</button>
+    <div class="links">
+      <a href="/search" class="button button--secondary">Назад к поиску</a>
+      <a href="/logout" class="button button--secondary">Выход</a>
+      <a href="/admin" class="button button--secondary">Админ-панель</a>
+    </div>
+    <button id="theme-toggle" class="button button--secondary">Переключить тему</button>
   </div>
   <script src="/js/theme.js"></script>
 </body>

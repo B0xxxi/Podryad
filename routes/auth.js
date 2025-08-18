@@ -39,7 +39,7 @@ router.post('/login-file', upload.single('keyfile'), (req, res) => {
       fs.unlinkSync(req.file.path);
       return res.render('login', { error: 'Неверный ключ-файл' });
     }
-  } catch (err) {
+  } catch {
     return res.render('login', { error: 'Ошибка обработки файла' });
   }
 });
@@ -58,4 +58,4 @@ router.get('/', (req, res) => {
   return res.redirect('/login');
 });
 
-module.exports = router; 
+module.exports = router;

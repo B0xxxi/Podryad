@@ -12,11 +12,13 @@ const PORT = process.env.PORT || 3000;
 // Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'secret_key',
-  resave: false,
-  saveUninitialized: false,
-}));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'secret_key',
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -51,8 +53,11 @@ app.use((req, res) => {
 });
 
 // Синхронизация моделей и запуск сервера
-sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}).catch(err => console.error('Ошибка при синхронизации базы:', err)); 
+sequelize
+  .sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch((err) => console.error('Ошибка при синхронизации базы:', err));

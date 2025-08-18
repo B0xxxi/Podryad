@@ -5,7 +5,7 @@ const { City, Installer, Sysadmin } = require('../models');
 // GET /city/:id - подробности по городу
 router.get('/:id', async (req, res) => {
   const city = await City.findByPk(req.params.id, {
-    include: [Installer, Sysadmin]
+    include: [Installer, Sysadmin],
   });
   if (!city) {
     return res.status(404).render('404');
@@ -13,4 +13,4 @@ router.get('/:id', async (req, res) => {
   res.render('city', { city });
 });
 
-module.exports = router; 
+module.exports = router;

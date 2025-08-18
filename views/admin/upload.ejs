@@ -5,27 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Импорт XLSX</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/custom-buttons.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Импорт XLSX</h1>
+  <div class="main-container">
+    <h1 class="admin-container__title">Импорт XLSX</h1>
     <% if (error) { %>
       <p class="error"><%= error %></p>
     <% } %>
     <% if (success) { %>
       <p class="success"><%= success %></p>
     <% } %>
-    <div id="drop-area" class="form-box">
+    <div id="drop-area" class="drop-area">
       <p>Перетащите файл XLSX сюда или</p>
       <form id="file-form" action="/admin/upload" method="POST" enctype="multipart/form-data">
         <input type="file" id="fileElem" name="xlsxfile" accept=".xlsx,.xls" style="display:none;" />
-        <button type="button" id="fileSelect">Выбрать файл</button>
+        <button type="button" id="fileSelect" class="button button--secondary button--light">Выбрать файл</button>
       </form>
     </div>
     <div class="links">
-      <a href="/admin">Назад</a>
+      <a href="/admin" class="button button--secondary">Назад</a>
     </div>
-    <button id="theme-toggle">Переключить тему</button>
+    <button id="theme-toggle" class="button button--secondary">Переключить тему</button>
   </div>
   <script src="/js/login.js"></script>
   <script src="/js/theme.js"></script>

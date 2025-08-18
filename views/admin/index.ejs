@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Админ-панель</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/custom-buttons.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Админ-панель</h1>
+  <div class="main-container">
+    <h1 class="admin-container__title">Админ-панель</h1>
     <ul class="links">
-      <li><a href="/search">Назад</a></li>
-      <li><a href="/admin/upload">Импорт XLSX</a></li>
-      <li><a href="/admin/add">Ручное добавление</a></li>
-      <li><a href="/admin/logs">Логи</a></li>
-      <li><a href="/admin/cities">Список городов</a></li>
-      <li><a href="/logout">Выход</a></li>
+      <a href="/search" class="button button--secondary">Назад</a>
+      <a href="/admin/upload" class="button button--secondary">Импорт XLSX</a>
+      <a href="/admin/add" class="button button--secondary">Ручное добавление</a>
+      <a href="/admin/logs" class="button button--secondary">Логи</a>
+      <a href="/admin/cities" class="button button--secondary">Список городов</a>
+      <a href="/logout" class="button button--secondary">Выход</a>
     </ul>
-    <button id="theme-toggle">Переключить тему</button>
+    <button id="theme-toggle" class="button button--secondary">Переключить тему</button>
   </div>
   <script src="/js/theme.js"></script>
 </body>

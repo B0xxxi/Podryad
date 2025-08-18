@@ -39,4 +39,4 @@ const Log = sequelize.define('Log', {
   details: { type: DataTypes.TEXT },
 });
 
-module.exports = { sequelize, City, Installer, Sysadmin, Log }; 
+module.exports = { sequelize, City, Installer, Sysadmin, Log };

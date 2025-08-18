@@ -5,38 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ручное добавление</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/custom-buttons.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Ручное добавление</h1>
+  <div class="main-container">
+    <h1 class="admin-container__title">Ручное добавление</h1>
     <% if (error) { %>
       <p class="error"><%= error %></p>
     <% } %>
     <% if (success) { %>
       <p class="success"><%= success %></p>
     <% } %>
-    <form action="/admin/add" method="POST" class="form-box">
-      <label>Город:
-        <input type="text" name="name" required />
+    <form action="/admin/add" method="POST" class="login-form">
+      <label class="login-form__label">Город:
+        <input type="text" name="name" class="login-form__input" required />
       </label>
-      <label>
+      <label class="login-form__label">
         <input type="checkbox" name="ddx" /> DDX
       </label>
-      <label>
+      <label class="login-form__label">
         <input type="checkbox" name="myuz" /> МЮЗ
       </label>
-      <label>Монтажники (через запятую):
-        <input type="text" name="installers" />
+      <label class="login-form__label">Монтажники (через запятую):
+        <input type="text" name="installers" class="login-form__input" />
       </label>
-      <label>Сисадмины (через запятую):
-        <input type="text" name="sysadmins" />
+      <label class="login-form__label">Сисадмины (через запятую):
+        <input type="text" name="sysadmins" class="login-form__input" />
       </label>
-      <button type="submit">Добавить</button>
+      <button type="submit" class="button button--primary button--light">Добавить</button>
     </form>
     <div class="links">
-      <a href="/admin">Назад</a>
+      <a href="/admin" class="button button--secondary">Назад</a>
     </div>
-    <button id="theme-toggle">Переключить тему</button>
+    <button id="theme-toggle" class="button button--secondary">Переключить тему</button>
   </div>
   <script src="/js/theme.js"></script>
 </body>

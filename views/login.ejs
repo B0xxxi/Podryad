@@ -5,28 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Авторизация</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/custom-buttons.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Авторизация</h1>
+  <div class="main-container">
+    <h1 class="login-container__title">Авторизация</h1>
     <% if (error) { %>
-      <p class="error"><%= error %></p>
+      <p class="login-container__error"><%= error %></p>
     <% } %>
     <div class="login-forms">
-      <form action="/login" method="POST" class="form-box">
-        <label for="password">Пароль:</label>
-        <input type="password" id="password" name="password" required />
-        <button type="submit">Войти по паролю</button>
+      <form action="/login" method="POST" class="login-form">
+        <label for="password" class="login-form__label">Пароль:</label>
+        <input type="password" id="password" name="password" class="login-form__input" required />
+        <button type="submit" class="button button--primary button--light">Войти по паролю</button>
       </form>
-      <div id="drop-area" class="form-box">
+      <div id="drop-area" class="drop-area">
         <p>Перетащите JSON-файл ключа сюда</p>
         <form id="file-form" action="/login-file" method="POST" enctype="multipart/form-data">
           <input type="file" id="fileElem" name="keyfile" accept=".json" style="display:none;" />
-          <button type="button" id="fileSelect">Выбрать файл</button>
+          <button type="button" id="fileSelect" class="button button--secondary">Выбрать файл</button>
         </form>
       </div>
     </div>
-    <button id="theme-toggle">Переключить тему</button>
+    <button id="theme-toggle" class="button button--secondary">Переключить тему</button>
   </div>
   <script src="/js/theme.js"></script>
   <script src="/js/login.js"></script>
