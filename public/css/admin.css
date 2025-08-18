@@ -1,0 +1,56 @@
+.admin-container {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-container__title {
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table__header-cell {
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 8px;
+  text-align: left;
+}
+
+.admin-table__body-cell {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+}
+
+.admin-table__body-cell a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.admin-table__body-cell a:hover {
+  text-decoration: underline;
+}
+
+.logs-list {
+  list-style: none;
+  padding: 10px;
+  margin-top: 20px;
+  max-height: 50vh;
+  overflow-y: auto;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+}
+
+.logs-list__item {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  word-break: break-all;
+}

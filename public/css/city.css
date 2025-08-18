@@ -1,0 +1,38 @@
+.city-container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 20px;
+  background: var(--bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.city-container__title {
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.city-details {
+  margin-top: 20px;
+}
+
+.city-details__section-title {
+  color: var(--text-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+.city-details__list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.city-details__list-item {
+  margin-bottom: 5px;
+}
+
+.links {
+  color: var(--text-color);
+}
